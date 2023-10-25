@@ -1,0 +1,53 @@
+DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="s1.css">
+    <title>Leaderboard</title>
+</head>
+<body><center>
+    <div class="navbar">
+        
+            <table cellpadding="20px">
+                <th><a href="#">Refresh</a></th>
+                <th><a href="q1.html">Quiz</a></th>
+                <th><a href="#">About</a></th>
+                <th><a href="#">Contact Us</a></th>
+            </table>
+        
+    </div>
+    <div class="lc">
+    <h1>Leaderboard - Top 10 Winners</h1>
+    <div id="leaderboard"></div>
+</div>
+
+    <script>
+        // Sample leaderboard data (replace with your actual data)
+        const leaderboardData = [
+            { name: 'Player 1', score: 500 },
+            { name: 'Player 2', score: 480 },
+            { name: 'Player 3', score: 450 },
+            { name: 'Player 4', score: 420 },
+            { name: 'Player 5', score: 400 },
+            { name: 'Player 6', score: 380 },
+            { name: 'Player 7', score: 360 },
+            { name: 'Player 8', score: 340 },
+            { name: 'Player 9', score: 320 },
+            { name: 'Player 10', score: 300 }
+        ];
+
+        // Sort the leaderboard data by score (descending order)
+        leaderboardData.sort((a, b) => b.score - a.score);
+
+        // Display the top 10 winners
+        const leaderboardElement = document.getElementById('leaderboard');
+        leaderboardData.slice(0, 10).forEach((entry, index) => {
+            const listItem = document.createElement('li');
+            listItem.textContent = `${index + 1}. ${entry.name} - Score: ${entry.score}`;
+            leaderboardElement.appendChild(listItem);
+        });
+    </script>
+</center>
+</body>
+</html>
